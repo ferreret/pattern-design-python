@@ -1,3 +1,29 @@
+"""
+El patrón de diseño Abstract Factory es un patrón creacional que proporciona una
+interfaz para crear familias de objetos relacionados o dependientes sin especificar
+sus clases concretas.
+
+Funciona como una "fábrica de fábricas". Se define una interfaz para una fábrica
+(la Abstract Factory) que declara métodos para crear varios productos abstractos
+(por ejemplo, create_enemy, create_boss). Luego, se crean fábricas concretas
+que implementan esta interfaz para producir una familia específica de productos
+concretos (por ejemplo, una fábrica para enemigos de desierto y otra para
+enemigos de agua).
+
+El cliente trabaja con las interfaces de la fábrica y los productos, lo que le
+permite ser completamente independiente de las implementaciones concretas.
+Para cambiar la familia de productos que utiliza la aplicación, solo se necesita
+cambiar la instancia de la fábrica concreta que se le pasa al cliente.
+
+En este ejemplo:
+- `EnemiesFactory` es la Abstract Factory.
+- `DesertEnemiesFactory` y `WaterEnemiesFactory` son las Concrete Factories.
+- `Enemy` y `Boss` son los Abstract Products.
+- `DesertEnemy`, `WaterEnemy`, `DesertBoss`, `WaterBoss` son los Concrete Products.
+- `Game` es el cliente que utiliza una fábrica para crear y gestionar enemigos.
+"""
+
+
 from abc import ABC, abstractmethod
 import random
 
